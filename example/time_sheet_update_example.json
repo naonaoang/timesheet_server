@@ -1,0 +1,54 @@
+{
+	"startDate": "2022-02-14",
+	"weekdays": [
+		{
+			"day": "Mon",
+			"date": "2021-02-14",
+			"startTime": 9,
+			"endTime": 18,
+			"isFloatingDay": false,
+			"isHoliday": false,
+			"isVacation": false
+		},
+		{
+			"day": "Tue",
+			"date": "2021-02-15",
+			"startTime": 9,
+			"endTime": 18,
+			"isFloatingDay": false,
+			"isHoliday": false,
+			"isVacation": false
+		},
+		{
+			"day": "Wed",
+			"date": "2021-02-16",
+			"startTime": 9,
+			"endTime": 18,
+			"isFloatingDay": false,
+			"isHoliday": false,
+			"isVacation": false
+		},
+		{
+			"day": "Thur",
+			"date": "2021-02-17",
+			"startTime": 9,
+			"endTime": 18,
+			"isFloatingDay": false,
+			"isHoliday": false,
+			"isVacation": false
+		},
+		{
+			"day": "Fri",
+			"date": "2021-02-18",
+			"startTime": 9,
+			"endTime": 18,
+			"isFloatingDay": false,
+			"isHoliday": false,
+			"isVacation": false
+		}
+	],
+	"totalBillingHour": 45,
+	"totalCompensatedHour": 45,
+	"floatingDaysUsed": 0,
+	"vacationDaysUsed": 0
+}

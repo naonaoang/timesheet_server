@@ -1,0 +1,61 @@
+{
+  "serviceStatus": {
+    "statusCode": "SUCCEED",
+    "success": true,
+    "errorMessage": ""
+  },
+  "TimeSheet": {
+    "startDate": "2022-01-31",
+    "weekdays": [
+      {
+        "day": "Mon",
+        "date": "2021-01-31",
+        "startTime": 9,
+        "endTime": 18,
+        "isFloatingDay": false,
+        "isHoliday": false,
+        "isVacation": false
+      },
+      {
+        "day": "Tue",
+        "date": "2021-02-01",
+        "startTime": 9,
+        "endTime": 18,
+        "isFloatingDay": false,
+        "isHoliday": false,
+        "isVacation": false
+      },
+      {
+        "day": "Wed",
+        "date": "2021-02-02",
+        "startTime": 9,
+        "endTime": 18,
+        "isFloatingDay": false,
+        "isHoliday": false,
+        "isVacation": false
+      },
+      {
+        "day": "Thur",
+        "date": "2021-02-03",
+        "startTime": null,
+        "endTime": null,
+        "isFloatingDay": true,
+        "isHoliday": false,
+        "isVacation": false
+      },
+      {
+        "day": "Fri",
+        "date": "2021-02-04",
+        "startTime": 9,
+        "endTime": 16,
+        "isFloatingDay": false,
+        "isHoliday": false,
+        "isVacation": false
+      }
+    ],
+    "totalBillingHour": 34,
+    "totalCompensatedHour": 43,
+    "floatingDaysUsed": 1,
+    "vacationDaysUsed": 0
+  }
+}
