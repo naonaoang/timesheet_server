@@ -1,0 +1,12 @@
+[{
+  "_id": {
+    "$oid": "620402e65b6dce770843e913"
+  },
+  "userId": 1,
+  "weeks": [
+    "620402975b6dce770843e910",
+    "620406315b6dce770843e923"
+  ],
+  "floatingDaysLeft": 2,
+  "vacationDaysLeft": 3
+}]

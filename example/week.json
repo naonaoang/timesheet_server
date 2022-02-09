@@ -1,0 +1,35 @@
+[{
+  "_id": {
+    "$oid": "620402975b6dce770843e910"
+  },
+  "startDate": "2022-01-31",
+  "weekdays": [
+    "620401525b6dce770843e908",
+    "6204020b5b6dce770843e90a",
+    "620402215b6dce770843e90b",
+    "6204022d5b6dce770843e90c",
+    "620402455b6dce770843e90d"
+  ],
+  "userId": 1,
+  "totalBillingHour": 34,
+  "totalCompensatedHour": 43,
+  "floatingDaysUsed": "1",
+  "vacationDaysUsed": "0"
+},{
+  "_id": {
+    "$oid": "620406315b6dce770843e923"
+  },
+  "userId": 1,
+  "startDate": "2022-02-14",
+  "totalBillingHour": 45,
+  "totalCompensatedHour": 45,
+  "weekdays": [
+    "620405915b6dce770843e91c",
+    "620405d65b6dce770843e91d",
+    "620405ec5b6dce770843e91e",
+    "620406005b6dce770843e91f",
+    "6204060e5b6dce770843e920"
+  ],
+  "floatingDaysUsed": 0,
+  "vacationDaysUsed": 0
+}]
