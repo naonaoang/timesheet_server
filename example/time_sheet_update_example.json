@@ -1,9 +1,9 @@
 {
-	"startDate": "2022-02-14",
+	"startDate": "2022-01-31",
 	"weekdays": [
 		{
 			"day": "Mon",
-			"date": "2021-02-14",
+			"date": "2021-01-31",
 			"startTime": 9,
 			"endTime": 18,
 			"isFloatingDay": false,
@@ -12,7 +12,7 @@
 		},
 		{
 			"day": "Tue",
-			"date": "2021-02-15",
+			"date": "2021-02-01",
 			"startTime": 9,
 			"endTime": 18,
 			"isFloatingDay": false,
@@ -21,7 +21,7 @@
 		},
 		{
 			"day": "Wed",
-			"date": "2021-02-16",
+			"date": "2021-02-02",
 			"startTime": 9,
 			"endTime": 18,
 			"isFloatingDay": false,
@@ -30,25 +30,27 @@
 		},
 		{
 			"day": "Thur",
-			"date": "2021-02-17",
-			"startTime": 9,
-			"endTime": 18,
-			"isFloatingDay": false,
+			"date": "2021-02-03",
+			"startTime": null,
+			"endTime": null,
+			"isFloatingDay": true,
 			"isHoliday": false,
 			"isVacation": false
 		},
 		{
 			"day": "Fri",
-			"date": "2021-02-18",
+			"date": "2021-02-04",
 			"startTime": 9,
-			"endTime": 18,
+			"endTime": 16,
 			"isFloatingDay": false,
 			"isHoliday": false,
 			"isVacation": false
 		}
 	],
-	"totalBillingHour": 45,
-	"totalCompensatedHour": 45,
-	"floatingDaysUsed": 0,
-	"vacationDaysUsed": 0
+	"totalBillingHour": 34,
+	"totalCompensatedHour": 43,
+	"floatingDaysUsed": 1,
+	"vacationDaysUsed": 0,
+	"submissionStatus": "complete",
+	"approvalStatus": "approved"
 }

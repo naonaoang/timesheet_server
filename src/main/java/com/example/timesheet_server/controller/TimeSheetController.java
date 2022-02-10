@@ -37,7 +37,7 @@ public class TimeSheetController {
         );
     }
 
-    @PutMapping("/{userId}/{startDate}")
+    @PutMapping("/{userId}")
     public void updateTimeSheet(@PathVariable int userId, @RequestBody Map<String, Object> payload){
         List<LinkedHashMap> weekdayDomain = (List<LinkedHashMap>) payload.get("weekdays");
         List<String> weekdayIds = new ArrayList<>();

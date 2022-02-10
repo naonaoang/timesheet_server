@@ -59,7 +59,9 @@
         "totalBillingHour": 34,
         "totalCompensatedHour": 43,
         "floatingDaysUsed": 1,
-        "vacationDaysUsed": 0
+        "vacationDaysUsed": 0,
+        "submissionStatus": "complete",
+        "approvalStatus": "approved"
       },
       {
         "startDate": "2022-02-14",
@@ -113,7 +115,9 @@
         "totalBillingHour": 45,
         "totalCompensatedHour": 45,
         "floatingDaysUsed": 0,
-        "vacationDaysUsed": 0
+        "vacationDaysUsed": 0,
+        "submissionStatus": "complete",
+        "approvalStatus": "approved"
       }
     ],
     "floatingDaysLeft": 2,

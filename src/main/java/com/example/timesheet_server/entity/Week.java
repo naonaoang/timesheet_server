@@ -22,9 +22,11 @@ public class Week {
     private int floatingDaysUsed;
     private int vacationDaysUsed;
     private Set<String> weekdays;
+    private String submissionStatus;
+    private String approvalStatus;
 
     @PersistenceConstructor
-    public Week(String id, int userId, String startDate, int totalBillingHour, int totalCompensatedHour, int floatingDaysUsed, int vacationDaysUsed, Set<String> weekdays){
+    public Week(String id, int userId, String startDate, int totalBillingHour, int totalCompensatedHour, int floatingDaysUsed, int vacationDaysUsed, Set<String> weekdays, String submissionStatus, String approvalStatus){
         this.id = id;
         this.userId = userId;
         this.startDate = startDate;
@@ -33,5 +35,7 @@ public class Week {
         this.floatingDaysUsed = floatingDaysUsed;
         this.vacationDaysUsed = vacationDaysUsed;
         this.weekdays = weekdays;
+        this.submissionStatus = submissionStatus;
+        this.approvalStatus = approvalStatus;
     }
 }

@@ -14,7 +14,9 @@
   "totalBillingHour": 34,
   "totalCompensatedHour": 43,
   "floatingDaysUsed": "1",
-  "vacationDaysUsed": "0"
+  "vacationDaysUsed": "0",
+  "submissionStatus": "complete",
+  "approvalStatus": "approved"
 },{
   "_id": {
     "$oid": "620406315b6dce770843e923"
@@ -31,5 +33,7 @@
     "6204060e5b6dce770843e920"
   ],
   "floatingDaysUsed": 0,
-  "vacationDaysUsed": 0
+  "vacationDaysUsed": 0,
+  "approvalStatus": "approved",
+  "submissionStatus": "complete"
 }]

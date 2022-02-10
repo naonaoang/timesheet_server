@@ -16,4 +16,6 @@ public class WeekDomain {
     private int totalCompensatedHour;
     private int floatingDaysUsed;
     private int vacationDaysUsed;
+    private String submissionStatus;
+    private String approvalStatus;
 }

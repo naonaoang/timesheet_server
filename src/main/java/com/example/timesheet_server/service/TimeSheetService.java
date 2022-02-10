@@ -85,6 +85,8 @@ public class TimeSheetService {
             newWeek.setStartDate(startDate);
             newWeek.setUserId(userId);
             newWeek.setWeekdays(newWeekdayIds);
+            newWeek.setApprovalStatus("unapproved");
+            newWeek.setSubmissionStatus("incomplete");
             weekRepo.insert(newWeek);
         }else{
             Template template = optionalTemplate.get();
@@ -108,6 +110,8 @@ public class TimeSheetService {
             newWeek.setStartDate(startDate);
             newWeek.setUserId(userId);
             newWeek.setWeekdays(newWeekdayIds);
+            newWeek.setApprovalStatus("unapproved");
+            newWeek.setSubmissionStatus("incomplete");
             weekRepo.insert(newWeek);
         }
         TimeSheet timeSheet = timeSheetRepo.findByUserId(userId).get();
@@ -167,6 +171,8 @@ public class TimeSheetService {
                 .totalBillingHour(week.getTotalBillingHour())
                 .totalCompensatedHour(week.getTotalCompensatedHour())
                 .vacationDaysUsed(week.getVacationDaysUsed())
+                .submissionStatus(week.getSubmissionStatus())
+                .approvalStatus(week.getApprovalStatus())
                 .build();
     }
 }
