@@ -2,6 +2,7 @@ package com.example.timesheet_server.domain;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Data
