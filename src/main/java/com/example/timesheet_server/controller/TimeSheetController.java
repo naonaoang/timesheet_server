@@ -1,7 +1,6 @@
 package com.example.timesheet_server.controller;
 
 import com.example.timesheet_server.constant.JwtConstant;
-import com.example.timesheet_server.dao.TemplateRepo;
 import com.example.timesheet_server.domain.*;
 import com.example.timesheet_server.domain.common.GeneralResponse;
 import com.example.timesheet_server.domain.common.ServiceStatus;
@@ -11,14 +10,12 @@ import com.example.timesheet_server.entity.Weekday;
 import com.example.timesheet_server.security.util.CookieUtil;
 import com.example.timesheet_server.security.util.JwtUtil;
 import com.example.timesheet_server.service.TimeSheetService;
-import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.time.LocalDate;
 import java.util.*;
 
 @RestController
@@ -66,8 +63,8 @@ public class TimeSheetController {
 
     @Scheduled(cron = "0 0 0 * * MON")
     @PostMapping("/add")
-    public void addNewTimeSheet(HttpServletRequest request){
-        int userId = JwtUtil.getSubjectFromJwt(CookieUtil.getValue(request, JwtConstant.JWT_COOKIE_NAME));
+    public void addNewTimeSheet(){
+        int userId = 1;//JwtUtil.getSubjectFromJwt(CookieUtil.getValue(request, JwtConstant.JWT_COOKIE_NAME));
         //String startDate = LocalDate.now().plusDays(7).toString();
         String startDate = "2022-02-07";
         timeSheetService.createTimeSheet(userId, startDate);
