@@ -1,5 +1,6 @@
 package com.example.timesheet_server.controller;
 
+import com.example.timesheet_server.constant.JwtConstant;
 import com.example.timesheet_server.dao.TemplateRepo;
 import com.example.timesheet_server.domain.*;
 import com.example.timesheet_server.domain.common.GeneralResponse;
@@ -7,38 +8,46 @@ import com.example.timesheet_server.domain.common.ServiceStatus;
 import com.example.timesheet_server.entity.Template;
 import com.example.timesheet_server.entity.Week;
 import com.example.timesheet_server.entity.Weekday;
+import com.example.timesheet_server.security.util.CookieUtil;
+import com.example.timesheet_server.security.util.JwtUtil;
 import com.example.timesheet_server.service.TimeSheetService;
 import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDate;
 import java.util.*;
 
 @RestController
-@RequestMapping("/timeSheet")
+@RequestMapping("/timesheet-service")
 public class TimeSheetController {
     @Autowired
     private TimeSheetService timeSheetService;
 
-    @GetMapping("/{userId}")
-    public TimeSheetResponse getTimeSheetByUserId(@PathVariable Integer userId){
+    @GetMapping("/summary")
+    public TimeSheetResponse getTimeSheetByUserId(HttpServletRequest request){
+        int userId = JwtUtil.getSubjectFromJwt(CookieUtil.getValue(request, JwtConstant.JWT_COOKIE_NAME));
         TimeSheetDomain timeSheetDomain = timeSheetService.getTimeSheetByUserId(userId);
         return new TimeSheetResponse(
                 new ServiceStatus("SUCCEED", true, ""), timeSheetDomain
         );
     }
 
-    @GetMapping("/{userId}/{startDate}")
-    public SingleWeekResponse getTimeSheetByUserIdAndStartDate(@PathVariable int userId, @PathVariable String startDate){
+    @GetMapping("/weekly/{startDate}")
+    public SingleWeekResponse getTimeSheetByUserIdAndStartDate(@PathVariable String startDate, HttpServletRequest request){
+        int userId = JwtUtil.getSubjectFromJwt(CookieUtil.getValue(request, JwtConstant.JWT_COOKIE_NAME));
         WeekDomain weekDomain = timeSheetService.getTimeSheetByUserIdAndStartDate(startDate, userId);
         return new SingleWeekResponse(
                 new ServiceStatus("SUCCEED", true, ""), weekDomain
         );
     }
 
-    @PutMapping("/{userId}")
-    public void updateTimeSheet(@PathVariable int userId, @RequestBody Map<String, Object> payload){
+    @PutMapping("/update")
+    public void updateTimeSheet(@RequestBody Map<String, Object> payload, HttpServletRequest request){
+        int userId = JwtUtil.getSubjectFromJwt(CookieUtil.getValue(request, JwtConstant.JWT_COOKIE_NAME));
         List<LinkedHashMap> weekdayDomain = (List<LinkedHashMap>) payload.get("weekdays");
         List<String> weekdayIds = new ArrayList<>();
         weekdayIds.addAll(timeSheetService.getWeekdayIds((String)payload.get("startDate"), userId));
@@ -55,15 +64,18 @@ public class TimeSheetController {
         timeSheetService.updateWeek(week);
     }
 
+    @Scheduled(cron = "0 0 0 * * MON")
     @PostMapping("/add")
-    public void addNewTimeSheet(){
-        int userId = 1;
+    public void addNewTimeSheet(HttpServletRequest request){
+        int userId = JwtUtil.getSubjectFromJwt(CookieUtil.getValue(request, JwtConstant.JWT_COOKIE_NAME));
+        //String startDate = LocalDate.now().plusDays(7).toString();
         String startDate = "2022-02-07";
         timeSheetService.createTimeSheet(userId, startDate);
     }
 
-    @PostMapping("/{userId}/save")
-    public void saveTemplate(@PathVariable int userId, @RequestBody Map<String, Object> payload){
+    @PostMapping("/save")
+    public void saveTemplate(@RequestBody Map<String, Object> payload, HttpServletRequest request){
+        int userId = JwtUtil.getSubjectFromJwt(CookieUtil.getValue(request, JwtConstant.JWT_COOKIE_NAME));
         List<LinkedHashMap> weekdayDomain = (List<LinkedHashMap>) payload.get("weekdays");
         Optional<Template> optionalTemplate = timeSheetService.getTemplateByUserId(userId);
         Template template = new Template();
